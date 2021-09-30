@@ -14,11 +14,6 @@ const App = () => {
     setTodos(newTodos);
     setTask("");
   }
-
-  const deleteHandler = (indexValue) =>{
-    const newTodos = todos.filter((todos,index) => index !== indexValue);
-    setTodos(newTodos);
-  }
   return (
     <div>
       <center>
@@ -26,10 +21,10 @@ const App = () => {
             <div className="card-body">
               <h5 className="card-title">Todo Management Appilication</h5>
               <form onSubmit={submitHandler}>
-                <input size="30" type="text" name="task" value={task} onChange={changehandler}/>&nbsp; &nbsp;
+                <input type="text" name="task" value={task} onChange={changehandler}/>&nbsp; &nbsp;
                 <input type="submit" name="Add" value="Add" />
               </form><br />
-              <Todolist todolist={todos} deleteHandler={deleteHandler}/>
+              <Todolist todolist={todos}/>
             </div>
           </div>
         </center>
